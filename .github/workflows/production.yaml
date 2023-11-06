@@ -21,7 +21,7 @@ jobs:
             ports:
               - 27017:27017
         env:
-          DATABASE_URL: mongodb+srv://tuanln:Sieunhangaovippro12012010!@cluster0.ne6p29i.mongodb.net/test?retryWrites=true&w=majority
+          DATABASE_URL: mongodb://localhost:27017/local
 
         steps:
             - uses: actions/checkout@v3
