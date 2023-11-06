@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-latest
         services:
           mongodb:
-            image: mongodb
+            image: mongo
         env:
           DATABASE_URL: mongodb+srv://tuanln:Sieunhangaovippro12012010!@cluster0.ne6p29i.mongodb.net/test?retryWrites=true&w=majority
         steps:
