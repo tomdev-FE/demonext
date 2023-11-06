@@ -1,12 +1,21 @@
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 
 export default function Brand() {
   return (
     <Link className="block group" href="/" aria-label="Cruip">
       <div className=' w-full max-w-[130px]' >
-        <Image src='/images/logos/nextfuse.png' width={300} height={300} alt='Nextfuse logo' layout='responsive' />
+        <Image
+          src='/images/logos/nextfuse.png'
+          width={300}
+          height={300}
+          alt='Nextfuse logo'
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </div>
     </Link>
-  )
+  );
 }
