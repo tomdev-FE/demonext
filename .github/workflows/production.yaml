@@ -14,17 +14,22 @@ jobs:
         runs-on: ubuntu-latest
         services:
           mongodb:
-            image: mongo
+            image: prismagraphql/mongo-single-replica:4.4.3-bionic
+            env:
+              MONGO_INITDB_ROOT_USERNAME: tuanln
+              MONGO_INITDB_ROOT_PASSWORD: Sieunhangaovippro12012010!
+            ports:
+              - 27017:27017
         env:
           DATABASE_URL: mongodb+srv://tuanln:Sieunhangaovippro12012010!@cluster0.ne6p29i.mongodb.net/test?retryWrites=true&w=majority
-        steps:
 
+        steps:
             - uses: actions/checkout@v3
 
             - name: Install Vercel CLI
               run: npm install --global vercel
             - name: Install Prisma
-              run: npx prisma migrate deploy
+              run: npx prisma generate
             - name: Pull Vercel Environment Information
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
